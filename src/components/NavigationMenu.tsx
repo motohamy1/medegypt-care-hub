@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Book, Calendar, Medication, Video, Hospital, Clock, Emergency } from "lucide-react";
+import { Book, Calendar, Pill, Video, Hospital, Clock, Bell } from "lucide-react";
 
 export function NavigationMenu() {
   const [language, setLanguage] = useState<"en" | "ar">("en");
@@ -23,7 +23,7 @@ export function NavigationMenu() {
     },
     {
       title: language === "en" ? "Medications" : "الأدوية",
-      icon: <Medication className="h-5 w-5" />,
+      icon: <Pill className="h-5 w-5" />,
       path: "/medications",
     },
     {
@@ -43,7 +43,7 @@ export function NavigationMenu() {
     },
     {
       title: language === "en" ? "Emergency" : "الطوارئ",
-      icon: <Emergency className="h-5 w-5" />,
+      icon: <Bell className="h-5 w-5" />,
       path: "/emergency",
     },
   ];

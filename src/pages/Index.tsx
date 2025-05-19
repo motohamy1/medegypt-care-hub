@@ -1,7 +1,7 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
-import { Book, Calendar, Medication, Video, Hospital, Clock, Emergency } from "lucide-react";
+import { Book, Calendar, Pill, Video, Hospital, Clock, Bell } from "lucide-react";
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 
@@ -26,7 +26,7 @@ const Index = () => {
       path: "/videos",
     },
     {
-      icon: <Medication className="h-12 w-12 text-sky-600" />,
+      icon: <Pill className="h-12 w-12 text-sky-600" />,
       title: "Medications Guide",
       description: "Information about diabetes and hypertension medications available in Egypt",
       path: "/medications",
@@ -44,7 +44,7 @@ const Index = () => {
       path: "/connect",
     },
     {
-      icon: <Emergency className="h-12 w-12 text-sky-600" />,
+      icon: <Bell className="h-12 w-12 text-sky-600" />,
       title: "Emergency Guide",
       description: "Learn to recognize warning signs and what to do in emergency situations",
       path: "/emergency",
