@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,32 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// Custom colors for MedEgypt Care
+				'med-blue': {
+					50: '#e6f2ff',
+					100: '#cce5ff',
+					200: '#99caff',
+					300: '#66afff',
+					400: '#3394ff',
+					500: '#0078ff',
+					600: '#0061cc',
+					700: '#004999',
+					800: '#003066',
+					900: '#001833',
+				},
+				'med-green': {
+					50: '#f2fce2',
+					100: '#e5f9c6',
+					200: '#cbf38c',
+					300: '#b1ed52',
+					400: '#97e719',
+					500: '#7dc100',
+					600: '#649a00',
+					700: '#4b7300',
+					800: '#324d00',
+					900: '#192600',
+				},
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
