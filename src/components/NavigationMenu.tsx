@@ -49,30 +49,30 @@ export function NavigationMenu() {
   ];
 
   return (
-    <header className="bg-white shadow">
+    <header className="bg-background border-b border-purple-800/30 shadow-md shadow-purple-900/10">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center space-x-2">
-            <span className="text-xl font-bold text-sky-600">
+            <span className="text-xl font-bold text-purple-400">
               {language === "en" ? "MedEgypt Care" : "ميد إيجيبت كير"}
             </span>
           </Link>
           
           <button
             onClick={toggleLanguage}
-            className="px-4 py-2 bg-green-50 text-green-700 rounded-md hover:bg-green-100"
+            className="px-4 py-2 bg-purple-900/30 text-purple-300 rounded-md hover:bg-purple-800/40"
           >
             {language === "en" ? "العربية" : "English"}
           </button>
         </div>
 
-        <nav className="flex justify-center py-3 overflow-x-auto">
+        <nav className="flex justify-center py-3 overflow-x-auto scrollbar-thin">
           <div className="flex space-x-4">
             {menuItems.map((item) => (
               <Link
                 key={item.path}
                 to={item.path}
-                className="flex flex-col items-center px-3 py-2 text-sky-700 hover:bg-sky-50 rounded-md"
+                className="flex flex-col items-center px-3 py-2 text-purple-300 hover:bg-purple-900/30 rounded-md transition-colors"
               >
                 {item.icon}
                 <span className="text-xs mt-1">{item.title}</span>
