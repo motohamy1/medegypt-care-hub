@@ -8,44 +8,44 @@ import { Button } from "@/components/ui/button";
 const Index = () => {
   const features = [
     {
-      icon: <Book className="h-12 w-12 text-sky-600" />,
-      title: "Lifestyle Modification Hub",
+      icon: <Book className="h-12 w-12 text-purple-400" />,
+      title: <h2 className="text-gradient">Lifestyle Modification Hub</h2>,
       description: "Personalized tips for nutrition, exercise, and stress management tailored for diabetes and hypertension",
       path: "/learn",
     },
     {
-      icon: <Calendar className="h-12 w-12 text-sky-600" />,
-      title: "Book an Appointment",
+      icon: <Calendar className="h-12 w-12 text-purple-400" />,
+      title: <h2 className="text-gradient">Book an Appointment</h2>,
       description: "Find and book appointments with qualified doctors in Egypt",
       path: "/doctors",
     },
     {
-      icon: <Video className="h-12 w-12 text-sky-600" />,
-      title: "Educational Videos",
+      icon: <Video className="h-12 w-12 text-purple-400" />,
+      title: <h2 className="text-gradient">Educational Videos</h2>,
       description: "Easy-to-understand videos about diabetes and hypertension management",
       path: "/videos",
     },
     {
-      icon: <Pill className="h-12 w-12 text-sky-600" />,
-      title: "Medications Guide",
+      icon: <Pill className="h-12 w-12 text-purple-400" />,
+      title: <h2 className="text-gradient">Medications Guide</h2>,
       description: "Information about diabetes and hypertension medications available in Egypt",
       path: "/medications",
     },
     {
-      icon: <Hospital className="h-12 w-12 text-sky-600" />,
-      title: "Lab Investigation Guide",
+      icon: <Hospital className="h-12 w-12 text-purple-400" />,
+      title: <h2 className="text-gradient">Lab Investigation Guide</h2>,
       description: "Interactive checklist of recommended lab tests and nearby lab locator",
       path: "/lab-tests",
     },
     {
-      icon: <Clock className="h-12 w-12 text-sky-600" />,
-      title: "Connect with Doctors",
+      icon: <Clock className="h-12 w-12 text-purple-400" />,
+      title: <h2 className="text-gradient">Connect with Doctors</h2>,
       description: "Securely communicate with your healthcare providers",
       path: "/connect",
     },
     {
-      icon: <Bell className="h-12 w-12 text-sky-600" />,
-      title: "Emergency Guide",
+      icon: <Bell className="h-12 w-12 text-purple-400" />,
+      title: <h2 className="text-gradient">Emergency Guide</h2>,
       description: "Learn to recognize warning signs and what to do in emergency situations",
       path: "/emergency",
     },
@@ -54,9 +54,9 @@ const Index = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-sky-100 to-green-50 rounded-xl p-8 mb-10">
-        <div className="max-w-3xl mx-auto text-center">
-          <h1 className="text-3xl md:text-4xl font-bold text-sky-800 mb-4">
+      <div className="text-3xl font-bold text-gradient rounded-xl p-8 mb-10">
+        <div className="max-w-3xl mx-auto text-center glass-morphism rounded-lg p-6">
+          <h1 className="text-3xl md:text-4xl font-bold text-purple-400  mb-4">
             Live Better with Diabetes & Hypertension
           </h1>
           <p className="text-lg text-gray-700 mb-6">
@@ -79,7 +79,7 @@ const Index = () => {
           <Link 
             key={index} 
             to={feature.path} 
-            className="bg-white border border-gray-100 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow"
+            className="glass-morphism rounded-lg p-6 hover:bg-purple-900/30 transition-colors"
           >
             <div className="flex flex-col items-center text-center">
               {feature.icon}
@@ -91,9 +91,9 @@ const Index = () => {
       </div>
 
       {/* Success Stories Section */}
-      <div className="bg-green-50 rounded-xl p-8 mb-10">
-        <h2 className="text-2xl font-semibold text-center text-gray-800 mb-6">Success Stories</h2>
-        <div className="bg-white p-6 rounded-lg shadow-sm">
+      <div className="glass-morphism rounded-xl p-8 mb-10">
+        <h2 className="text-2xl font-semibold text-center text-purple-400 mb-6">Success Stories</h2>
+        <div className="border border-purple-800/40 p-6 rounded-lg hover:bg-purple-900/30 transition-colors">
           <blockquote className="italic text-gray-600">
             "With the help of MedEgypt Care, I've been able to better manage my diabetes through proper diet and regular check-ups. The doctor directory helped me find a specialist close to my home in Cairo."
           </blockquote>

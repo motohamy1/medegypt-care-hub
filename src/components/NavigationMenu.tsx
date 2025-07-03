@@ -66,16 +66,16 @@ export function NavigationMenu() {
           </button>
         </div>
 
-        <nav className="flex justify-center py-3 overflow-x-auto scrollbar-thin">
-          <div className="flex space-x-4">
+        <nav className="py-3 overflow-x-auto scrollbar-thin">
+          <div className="flex justify-between min-w-max px-2 sm:justify-center sm:space-x-4">
             {menuItems.map((item) => (
               <Link
                 key={item.path}
                 to={item.path}
-                className="flex flex-col items-center px-3 py-2 text-purple-300 hover:bg-purple-900/30 rounded-md transition-colors"
+                className="flex flex-col items-center px-2 py-2 text-purple-300 hover:bg-purple-900/30 rounded-md transition-colors min-w-0 flex-shrink-0"
               >
                 {item.icon}
-                <span className="text-xs mt-1">{item.title}</span>
+                <span className="text-xs mt-1 whitespace-nowrap">{item.title}</span>
               </Link>
             ))}
           </div>

@@ -9,16 +9,16 @@ const Emergency = () => {
     <Layout>
       <div className="max-w-5xl mx-auto">
         <div className="flex items-center mb-6">
-          <Bell className="h-8 w-8 text-sky-600 mr-3" />
-          <h1 className="text-3xl font-bold text-gray-900">Emergency Guide</h1>
+          <Bell className="h-8 w-8 text-purple-400 mr-3" />
+          <h1 className="text-3xl font-bold text-gradient">Emergency Guide</h1>
         </div>
         
-        <div className="bg-red-50 border-l-4 border-red-500 p-4 mb-8">
+        <div className="bg-red-950/30 border-l-4 border-red-500 p-4 mb-8">
           <div className="flex">
             <AlertTriangle className="h-6 w-6 text-red-600 mr-2" />
             <div>
               <h2 className="text-lg font-bold text-red-700">Important Notice</h2>
-              <p className="text-gray-700">
+              <p className="text-gray-300">
                 This guide is for educational purposes only. In case of an emergency, 
                 call emergency services immediately or go to the nearest hospital.
               </p>
@@ -26,24 +26,24 @@ const Emergency = () => {
           </div>
         </div>
         
-        <div className="bg-white rounded-lg shadow-md p-6 mb-8">
-          <h2 className="text-xl font-semibold text-sky-700 mb-6">Emergency Contacts in Egypt</h2>
+        <div className="glass-morphism rounded-lg p-6 mb-8">
+          <h2 className="text-xl font-semibold text-purple-400 mb-6">Emergency Contacts in Egypt</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-            <div className="border border-gray-200 rounded-lg p-4 bg-gray-50">
+            <div className="border border-purple-800/40 rounded-lg p-4 bg-purple-900/30 hover:bg-purple-900/40 transition-colors">
               <div className="flex items-center mb-2">
                 <Phone className="h-5 w-5 text-red-600 mr-2" />
-                <h3 className="font-medium text-gray-900">Ambulance</h3>
+                <h3 className="font-medium text-gray-300">Ambulance</h3>
               </div>
-              <p className="text-xl font-bold">123</p>
+              <p className="text-xl font-bold text-gray-200">123</p>
             </div>
             
-            <div className="border border-gray-200 rounded-lg p-4 bg-gray-50">
+            <div className="border border-purple-800/40 rounded-lg p-4 bg-purple-900/30 hover:bg-purple-900/40 transition-colors">
               <div className="flex items-center mb-2">
                 <Phone className="h-5 w-5 text-red-600 mr-2" />
-                <h3 className="font-medium text-gray-900">Emergency Police</h3>
+                <h3 className="font-medium text-gray-300">Emergency Police</h3>
               </div>
-              <p className="text-xl font-bold">122</p>
+              <p className="text-xl font-bold text-gray-200">122</p>
             </div>
           </div>
           
@@ -54,12 +54,12 @@ const Emergency = () => {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-          <div className="bg-white rounded-lg shadow-md p-6">
-            <h2 className="text-xl font-semibold text-red-700 border-b pb-3 mb-4">Diabetes Emergencies</h2>
+          <div className="glass-morphism rounded-lg p-6">
+            <h2 className="text-xl font-semibold text-red-400 border-b border-purple-800/40 pb-3 mb-4">Diabetes Emergencies</h2>
             
             <div className="mb-6">
-              <h3 className="font-medium text-gray-900 mb-2">Signs of Hypoglycemia (Low Blood Sugar)</h3>
-              <ul className="list-disc pl-5 text-gray-700 space-y-1">
+              <h3 className="font-medium text-gray-300 mb-2">Signs of Hypoglycemia (Low Blood Sugar)</h3>
+              <ul className="list-disc pl-5 text-gray-400 space-y-1">
                 <li>Shaking or trembling</li>
                 <li>Sweating</li>
                 <li>Rapid heartbeat</li>
@@ -70,8 +70,8 @@ const Emergency = () => {
             </div>
             
             <div>
-              <h3 className="font-medium text-gray-900 mb-2">Signs of Hyperglycemia (High Blood Sugar)</h3>
-              <ul className="list-disc pl-5 text-gray-700 space-y-1">
+              <h3 className="font-medium text-gray-300 mb-2">Signs of Hyperglycemia (High Blood Sugar)</h3>
+              <ul className="list-disc pl-5 text-gray-400 space-y-1">
                 <li>Excessive thirst</li>
                 <li>Frequent urination</li>
                 <li>Blurred vision</li>
@@ -82,12 +82,12 @@ const Emergency = () => {
             </div>
           </div>
           
-          <div className="bg-white rounded-lg shadow-md p-6">
-            <h2 className="text-xl font-semibold text-red-700 border-b pb-3 mb-4">Hypertension Emergencies</h2>
+          <div className="glass-morphism rounded-lg p-6">
+            <h2 className="text-xl font-semibold text-red-400 border-b border-purple-800/40 pb-3 mb-4">Hypertension Emergencies</h2>
             
             <div className="mb-6">
-              <h3 className="font-medium text-gray-900 mb-2">Signs of Hypertensive Crisis</h3>
-              <ul className="list-disc pl-5 text-gray-700 space-y-1">
+              <h3 className="font-medium text-gray-300 mb-2">Signs of Hypertensive Crisis</h3>
+              <ul className="list-disc pl-5 text-gray-400 space-y-1">
                 <li>Severe headache</li>
                 <li>Shortness of breath</li>
                 <li>Nosebleeds</li>
@@ -99,8 +99,8 @@ const Emergency = () => {
             </div>
             
             <div>
-              <h3 className="font-medium text-gray-900 mb-2">Signs of Stroke (Call 123 Immediately)</h3>
-              <ul className="list-disc pl-5 text-gray-700 space-y-1">
+              <h3 className="font-medium text-gray-300 mb-2">Signs of Stroke (Call 123 Immediately)</h3>
+              <ul className="list-disc pl-5 text-gray-400 space-y-1">
                 <li>Sudden numbness in face, arm, or leg</li>
                 <li>Sudden confusion or trouble speaking</li>
                 <li>Sudden trouble seeing</li>
@@ -111,9 +111,9 @@ const Emergency = () => {
           </div>
         </div>
         
-        <div className="bg-white rounded-lg shadow-md p-6">
-          <h2 className="text-xl font-semibold text-sky-700 mb-4">Emergency Action Plans</h2>
-          <p className="text-gray-700 mb-6">
+        <div className="glass-morphism rounded-lg p-6">
+          <h2 className="text-xl font-semibold text-purple-400 mb-4">Emergency Action Plans</h2>
+          <p className="text-gray-300 mb-6">
             Download these step-by-step guides to know exactly what to do in common emergency situations.
           </p>
           
