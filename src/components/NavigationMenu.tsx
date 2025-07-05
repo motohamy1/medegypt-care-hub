@@ -1,10 +1,10 @@
 
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Book, Calendar, Pill, Video, Hospital, Clock, Bell } from "lucide-react";
+import { useLanguage } from "../contexts/LanguageContext";
 
 export function NavigationMenu() {
-  const [language, setLanguage] = useState<"en" | "ar">("en");
+  const { language, setLanguage, t } = useLanguage();
 
   const toggleLanguage = () => {
     setLanguage(language === "en" ? "ar" : "en");
@@ -12,37 +12,37 @@ export function NavigationMenu() {
 
   const menuItems = [
     {
-      title: language === "en" ? "Learn" : "تعلم",
+      title: t('nav.learn'),
       icon: <Book className="h-5 w-5" />,
       path: "/learn",
     },
     {
-      title: language === "en" ? "Book a Doctor" : "حجز طبيب",
+      title: t('nav.doctors'),
       icon: <Calendar className="h-5 w-5" />,
       path: "/doctors",
     },
     {
-      title: language === "en" ? "Medications" : "الأدوية",
+      title: t('nav.medications'),
       icon: <Pill className="h-5 w-5" />,
       path: "/medications",
     },
     {
-      title: language === "en" ? "Videos" : "فيديوهات",
+      title: t('nav.videos'),
       icon: <Video className="h-5 w-5" />,
       path: "/videos",
     },
     {
-      title: language === "en" ? "Lab Tests" : "التحاليل",
+      title: t('nav.labTests'),
       icon: <Hospital className="h-5 w-5" />,
       path: "/lab-tests",
     },
     {
-      title: language === "en" ? "Connect" : "تواصل",
+      title: t('nav.connect'),
       icon: <Clock className="h-5 w-5" />,
       path: "/connect",
     },
     {
-      title: language === "en" ? "Emergency" : "الطوارئ",
+      title: t('nav.emergency'),
       icon: <Bell className="h-5 w-5" />,
       path: "/emergency",
     },
@@ -54,7 +54,7 @@ export function NavigationMenu() {
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center space-x-2">
             <span className="text-xl font-bold text-purple-400">
-              {language === "en" ? "MedEgypt Care" : "ميد إيجيبت كير"}
+              {t('nav.brandName')}
             </span>
           </Link>
           
@@ -62,7 +62,7 @@ export function NavigationMenu() {
             onClick={toggleLanguage}
             className="px-4 py-2 bg-purple-900/30 text-purple-300 rounded-md hover:bg-purple-800/40"
           >
-            {language === "en" ? "العربية" : "English"}
+            {t('nav.languageSwitch')}
           </button>
         </div>
 

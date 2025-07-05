@@ -11,8 +11,10 @@ import { medicationsData, Medication } from "@/data/medications";
 import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover";
 import { Label } from "@/components/ui/label";
 import { Command, CommandInput, CommandList, CommandEmpty, CommandGroup, CommandItem } from "@/components/ui/command";
+import { useLanguage } from "../contexts/LanguageContext";
 
 const Medications = () => {
+  const { t } = useLanguage();
   const [searchTerm, setSearchTerm] = useState("");
   const [activeCategory, setActiveCategory] = useState("all");
   const [activeSubcategory, setActiveSubcategory] = useState<string | null>(null);
@@ -65,17 +67,17 @@ const Medications = () => {
       <div className="max-w-5xl mx-auto">
         <div className="flex items-center mb-8">
           <Pill className="h-8 w-8 text-purple-400 mr-3" />
-          <h1 className="text-3xl font-bold text-gradient">Medications Guide</h1>
+          <h1 className="text-3xl font-bold text-gradient">{t('medications.title')}</h1>
         </div>
         
         <Card className="bg-purple-950/30 border border-purple-800/30 shadow-md shadow-purple-900/10 mb-8">
           <CardHeader className="pb-2">
             <div className="flex flex-col md:flex-row md:items-center md:justify-between">
               <CardTitle className="text-xl font-semibold text-purple-300">
-                Medications in Egypt
+                {t('medications.medicationsInEgypt')}
                 {filteredMedications.length > 0 && (
                   <Badge variant="secondary" className="ml-2 bg-purple-700/60 text-purple-200 hover:bg-purple-600/70">
-                    {filteredMedications.length} results
+                    {filteredMedications.length} {t('medications.results')}
                   </Badge>
                 )}
               </CardTitle>
@@ -85,7 +87,7 @@ const Medications = () => {
                   <Search className="absolute left-2 top-2.5 h-4 w-4 text-purple-400" />
                   <Input 
                     className="pl-8 w-full bg-purple-900/50 border-purple-800/50 text-purple-200 placeholder:text-purple-400"
-                    placeholder="Search medications or brands" 
+                    placeholder={t('medications.searchPlaceholder')} 
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                   />
@@ -113,17 +115,17 @@ const Medications = () => {
                   </PopoverTrigger>
                   <PopoverContent className="w-72 p-4 bg-purple-950 border-purple-800/50 text-purple-200">
                     <div className="space-y-4">
-                      <h4 className="font-medium">Filter Medications</h4>
+                      <h4 className="font-medium">{t('medications.filterMedications')}</h4>
                       
                       <div className="space-y-2">
-                        <Label htmlFor="subcategory" className="text-purple-300">Drug Class</Label>
+                        <Label htmlFor="subcategory" className="text-purple-300">{t('medications.drugClass')}</Label>
                         <Command className="rounded-md border border-purple-800/50 bg-purple-900/50">
                           <CommandInput 
-                            placeholder="Search drug classes..." 
+                            placeholder={t('medications.searchDrugClasses')} 
                             className="text-purple-200 placeholder:text-purple-400"
                           />
                           <CommandList className="text-purple-200">
-                            <CommandEmpty>No results found.</CommandEmpty>
+                            <CommandEmpty>{t('medications.noResults')}</CommandEmpty>
                             <CommandGroup>
                               <CommandItem 
                                 className={`${!activeSubcategory ? 'bg-purple-800/60 text-purple-100' : 'text-purple-300'} cursor-pointer`}
@@ -132,7 +134,7 @@ const Medications = () => {
                                   setOpenPopover(false);
                                 }}
                               >
-                                All Classes
+                                {t('medications.allClasses')}
                               </CommandItem>
                               {subcategories.map((subcat) => (
                                 <CommandItem 
@@ -156,7 +158,7 @@ const Medications = () => {
                         variant="outline" 
                         className="w-full text-purple-200 border-purple-700 hover:bg-purple-800/60 hover:text-purple-100"
                       >
-                        Reset Filters
+                        {t('medications.resetFilters')}
                       </Button>
                     </div>
                   </PopoverContent>
@@ -179,7 +181,7 @@ const Medications = () => {
                     value={category}
                     className="data-[state=active]:bg-purple-800/60 data-[state=active]:text-purple-100 text-purple-300"
                   >
-                    {category === "all" ? "All" : category}
+                    {category === "all" ? t('medications.all') : category}
                   </TabsTrigger>
                 ))}
               </TabsList>
@@ -187,7 +189,7 @@ const Medications = () => {
             
             {activeSubcategory && (
               <div className="flex items-center mt-2">
-                <span className="text-sm text-purple-400">Filtered by: </span>
+                <span className="text-sm text-purple-400">{t('medications.filteredBy')} </span>
                 <Badge 
                   variant="outline" 
                   className="ml-2 text-purple-200 border-purple-700 flex items-center gap-1"
@@ -209,20 +211,20 @@ const Medications = () => {
           <CardContent>
             {filteredMedications.length === 0 ? (
               <div className="py-10 text-center text-purple-300">
-                <p>No medications found matching your search criteria.</p>
+                <p>{t('medications.noMedicationsFound')}</p>
                 <Button 
                   onClick={resetFilters}
                   variant="outline" 
                   className="mt-4 text-purple-200 border-purple-700 hover:bg-purple-800/60 hover:text-purple-100"
                 >
-                  Clear filters
+                  {t('medications.clearFilters')}
                 </Button>
               </div>
             ) : (
               <div className="space-y-6">
                 {Array.from(new Set(filteredMedications.map(med => med.category))).map(category => (
                   <div key={category} className="border-b border-purple-800/50 pb-6 mb-6 last:border-0 last:pb-0 last:mb-0">
-                    <h3 className="text-lg font-medium text-purple-300 mb-2">{category} Medications</h3>
+                    <h3 className="text-lg font-medium text-purple-300 mb-2">{category} {t('medications.medicationsCategory')}</h3>
                     
                     {Array.from(new Set(filteredMedications.filter(med => med.category === category).map(med => med.subcategory))).map(subcategory => (
                       <div key={`${category}-${subcategory}`} className="mb-4 last:mb-0">
@@ -252,19 +254,19 @@ const Medications = () => {
                                 <p className="text-sm text-purple-300 mt-1">{medication.description}</p>
                                 
                                 <div className="mt-2 text-sm text-purple-300">
-                                  <span className="font-medium text-purple-200">Brands in Egypt:</span>{" "}
+                                  <span className="font-medium text-purple-200">{t('medications.brandsInEgypt')}</span>{" "}
                                   {medication.brands.join(", ")}
                                 </div>
                                 
                                 {medication.mechanismOfAction && (
                                   <div className="mt-1 text-xs text-purple-400">
-                                    <span className="font-medium">Mechanism:</span> {medication.mechanismOfAction}
+                                    <span className="font-medium">{t('medications.mechanism')}</span> {medication.mechanismOfAction}
                                   </div>
                                 )}
                                 
                                 {medication.dosage && (
                                   <div className="mt-1 text-xs text-purple-400">
-                                    <span className="font-medium">Typical Dosage:</span> {medication.dosage}
+                                    <span className="font-medium">{t('medications.typicalDosage')}</span> {medication.dosage}
                                   </div>
                                 )}
                               </div>
@@ -281,14 +283,12 @@ const Medications = () => {
         
         <Card className="bg-amber-950/30 border border-amber-800/30 shadow-md shadow-amber-900/10">
           <CardContent className="p-6">
-            <h2 className="text-xl font-semibold text-amber-400 mb-4">Important Notes</h2>
+            <h2 className="text-xl font-semibold text-amber-400 mb-4">{t('medications.importantNotes')}</h2>
             <p className="text-amber-200 mb-3">
-              This information is provided for educational purposes only. Always consult with your healthcare 
-              provider before starting, changing, or stopping any medication.
+              {t('medications.disclaimer1')}
             </p>
             <p className="text-amber-200">
-              Medication availability and pricing may vary by location in Egypt. The availability status shown is 
-              approximate and subject to change.
+              {t('medications.disclaimer2')}
             </p>
           </CardContent>
         </Card>

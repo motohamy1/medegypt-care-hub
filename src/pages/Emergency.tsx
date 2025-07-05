@@ -3,37 +3,39 @@ import React from "react";
 import Layout from "@/components/Layout";
 import { Bell, AlertTriangle, Phone, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "../contexts/LanguageContext";
 
 const Emergency = () => {
+  const { t } = useLanguage();
+  
   return (
     <Layout>
       <div className="max-w-5xl mx-auto">
         <div className="flex items-center mb-6">
           <Bell className="h-8 w-8 text-purple-400 mr-3" />
-          <h1 className="text-3xl font-bold text-gradient">Emergency Guide</h1>
+          <h1 className="text-3xl font-bold text-gradient">{t('emergency.title')}</h1>
         </div>
         
         <div className="bg-red-950/30 border-l-4 border-red-500 p-4 mb-8">
           <div className="flex">
             <AlertTriangle className="h-6 w-6 text-red-600 mr-2" />
             <div>
-              <h2 className="text-lg font-bold text-red-700">Important Notice</h2>
+              <h2 className="text-lg font-bold text-red-700">{t('emergency.importantNotice')}</h2>
               <p className="text-gray-300">
-                This guide is for educational purposes only. In case of an emergency, 
-                call emergency services immediately or go to the nearest hospital.
+                {t('emergency.disclaimer')}
               </p>
             </div>
           </div>
         </div>
         
         <div className="glass-morphism rounded-lg p-6 mb-8">
-          <h2 className="text-xl font-semibold text-purple-400 mb-6">Emergency Contacts in Egypt</h2>
+          <h2 className="text-xl font-semibold text-purple-400 mb-6">{t('emergency.contactsTitle')}</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
             <div className="border border-purple-800/40 rounded-lg p-4 bg-purple-900/30 hover:bg-purple-900/40 transition-colors">
               <div className="flex items-center mb-2">
                 <Phone className="h-5 w-5 text-red-600 mr-2" />
-                <h3 className="font-medium text-gray-300">Ambulance</h3>
+                <h3 className="font-medium text-gray-300">{t('emergency.ambulance')}</h3>
               </div>
               <p className="text-xl font-bold text-gray-200">123</p>
             </div>
@@ -41,7 +43,7 @@ const Emergency = () => {
             <div className="border border-purple-800/40 rounded-lg p-4 bg-purple-900/30 hover:bg-purple-900/40 transition-colors">
               <div className="flex items-center mb-2">
                 <Phone className="h-5 w-5 text-red-600 mr-2" />
-                <h3 className="font-medium text-gray-300">Emergency Police</h3>
+                <h3 className="font-medium text-gray-300">{t('emergency.police')}</h3>
               </div>
               <p className="text-xl font-bold text-gray-200">122</p>
             </div>
@@ -49,7 +51,7 @@ const Emergency = () => {
           
           <Button className="flex items-center" variant="outline">
             <Download className="h-4 w-4 mr-2" />
-            Download Emergency Contacts Card
+            {t('emergency.downloadCard')}
           </Button>
         </div>
         
