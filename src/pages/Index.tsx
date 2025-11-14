@@ -57,8 +57,9 @@ const Index = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <div className="text-3xl font-bold text-gradient rounded-xl p-8 mb-10">
-        <div className="max-w-3xl mx-auto text-center glass-morphism rounded-lg p-6">
+      <div className="text-3xl font-bold text-gradient rounded-3xl p-8 mb-10">
+        <div className="max-w-3xl mx-auto text-center glass-morphism rounded-3xl p-6"
+             style={{boxShadow: '0 20px 50px rgba(139, 92, 246, 0.5)'}}>
           <h1 className="text-3xl md:text-4xl font-bold text-purple-400  mb-4">
             {t('home.title')}
           </h1>
@@ -66,10 +67,10 @@ const Index = () => {
             {t('home.subtitle')}
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Button asChild className="bg-sky-600 hover:bg-sky-700">
+            <Button asChild className="bg-cyan-400 text-purple-500 hover:bg-cyan-100">
               <Link to="/learn">{t('home.exploreResources')}</Link>
             </Button>
-            <Button asChild variant="outline" className="border-green-600 text-green-700 hover:bg-green-50">
+            <Button asChild variant="outline" className="border-cyan-400 text-sky-300 hover:bg-purple-900/30">
               <Link to="/doctors">{t('home.findDoctor')}</Link>
             </Button>
           </div>
@@ -82,7 +83,8 @@ const Index = () => {
           <Link 
             key={index} 
             to={feature.path} 
-            className="glass-morphism rounded-lg p-6 hover:bg-purple-900/30 transition-colors"
+            className="glass-morphism rounded-3xl p-6 hover:bg-purple-900/30 transition-colors"
+            style={{boxShadow: '0 10px 25px rgba(0, 200, 250, 0.8)'}}
           >
             <div className="flex flex-col items-center text-center">
               {feature.icon}

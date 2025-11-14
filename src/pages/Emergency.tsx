@@ -57,80 +57,80 @@ const Emergency = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
           <div className="glass-morphism rounded-lg p-6">
-            <h2 className="text-xl font-semibold text-red-400 border-b border-purple-800/40 pb-3 mb-4">Diabetes Emergencies</h2>
+            <h2 className="text-xl font-semibold text-red-400 border-b border-purple-800/40 pb-3 mb-4">{t('emergency.diabetesEmergencies')}</h2>
             
             <div className="mb-6">
-              <h3 className="font-medium text-gray-300 mb-2">Signs of Hypoglycemia (Low Blood Sugar)</h3>
+              <h3 className="font-medium text-gray-300 mb-2">{t('emergency.hypoglycemiaSigns')}</h3>
               <ul className="list-disc pl-5 text-gray-400 space-y-1">
-                <li>Shaking or trembling</li>
-                <li>Sweating</li>
-                <li>Rapid heartbeat</li>
-                <li>Feeling anxious or irritable</li>
-                <li>Hunger</li>
-                <li>Confusion</li>
+                <li>{t('emergency.shaking')}</li>
+                <li>{t('emergency.sweating')}</li>
+                <li>{t('emergency.rapidHeartbeat')}</li>
+                <li>{t('emergency.anxiousIrritable')}</li>
+                <li>{t('emergency.hunger')}</li>
+                <li>{t('emergency.confusion')}</li>
               </ul>
             </div>
             
             <div>
-              <h3 className="font-medium text-gray-300 mb-2">Signs of Hyperglycemia (High Blood Sugar)</h3>
+              <h3 className="font-medium text-gray-300 mb-2">{t('emergency.hyperglycemiaSigns')}</h3>
               <ul className="list-disc pl-5 text-gray-400 space-y-1">
-                <li>Excessive thirst</li>
-                <li>Frequent urination</li>
-                <li>Blurred vision</li>
-                <li>Fatigue</li>
-                <li>Nausea or vomiting</li>
-                <li>Fruity breath odor (sign of DKA)</li>
+                <li>{t('emergency.excessiveThirst')}</li>
+                <li>{t('emergency.frequentUrination')}</li>
+                <li>{t('emergency.blurredVision')}</li>
+                <li>{t('emergency.fatigue')}</li>
+                <li>{t('emergency.nauseaVomiting')}</li>
+                <li>{t('emergency.fruityBreath')}</li>
               </ul>
             </div>
           </div>
           
           <div className="glass-morphism rounded-lg p-6">
-            <h2 className="text-xl font-semibold text-red-400 border-b border-purple-800/40 pb-3 mb-4">Hypertension Emergencies</h2>
+            <h2 className="text-xl font-semibold text-red-400 border-b border-purple-800/40 pb-3 mb-4">{t('emergency.hypertensionEmergencies')}</h2>
             
             <div className="mb-6">
-              <h3 className="font-medium text-gray-300 mb-2">Signs of Hypertensive Crisis</h3>
+              <h3 className="font-medium text-gray-300 mb-2">{t('emergency.hypertensiveCrisisSigns')}</h3>
               <ul className="list-disc pl-5 text-gray-400 space-y-1">
-                <li>Severe headache</li>
-                <li>Shortness of breath</li>
-                <li>Nosebleeds</li>
-                <li>Severe anxiety</li>
-                <li>Chest pain</li>
-                <li>Vision problems</li>
-                <li>Blood pressure above 180/120 mmHg</li>
+                <li>{t('emergency.severeHeadache')}</li>
+                <li>{t('emergency.shortnessBreath')}</li>
+                <li>{t('emergency.nosebleeds')}</li>
+                <li>{t('emergency.severeAnxiety')}</li>
+                <li>{t('emergency.chestPain')}</li>
+                <li>{t('emergency.visionProblems')}</li>
+                <li>{t('emergency.highBloodPressure')}</li>
               </ul>
             </div>
             
             <div>
-              <h3 className="font-medium text-gray-300 mb-2">Signs of Stroke (Call 123 Immediately)</h3>
+              <h3 className="font-medium text-gray-300 mb-2">{t('emergency.strokeSigns')}</h3>
               <ul className="list-disc pl-5 text-gray-400 space-y-1">
-                <li>Sudden numbness in face, arm, or leg</li>
-                <li>Sudden confusion or trouble speaking</li>
-                <li>Sudden trouble seeing</li>
-                <li>Sudden trouble walking or dizziness</li>
-                <li>Sudden severe headache</li>
+                <li>{t('emergency.suddenNumbness')}</li>
+                <li>{t('emergency.suddenConfusion')}</li>
+                <li>{t('emergency.suddenTroubleSeeing')}</li>
+                <li>{t('emergency.suddenTroubleWalking')}</li>
+                <li>{t('emergency.suddenSevereHeadache')}</li>
               </ul>
             </div>
           </div>
         </div>
         
         <div className="glass-morphism rounded-lg p-6">
-          <h2 className="text-xl font-semibold text-purple-400 mb-4">Emergency Action Plans</h2>
+          <h2 className="text-xl font-semibold text-purple-400 mb-4">{t('emergency.actionPlansTitle')}</h2>
           <p className="text-gray-300 mb-6">
-            Download these step-by-step guides to know exactly what to do in common emergency situations.
+            {t('emergency.actionPlansDescription')}
           </p>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             <Button variant="outline" className="flex items-center justify-center">
               <Download className="h-4 w-4 mr-2" />
-              Hypoglycemia Guide
+              {t('emergency.hypoglycemiaGuide')}
             </Button>
             <Button variant="outline" className="flex items-center justify-center">
               <Download className="h-4 w-4 mr-2" />
-              DKA Action Plan
+              {t('emergency.dkaActionPlan')}
             </Button>
             <Button variant="outline" className="flex items-center justify-center">
               <Download className="h-4 w-4 mr-2" />
-              Stroke Action Plan
+              {t('emergency.strokeActionPlan')}
             </Button>
           </div>
         </div>
