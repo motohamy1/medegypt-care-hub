@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+
+/.zencoder/
+/node_modules/
+/.qodo/
